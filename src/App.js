@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <body className="min-h-screen bg-slate-950">
+      <div className="min-h-screen bg-slate-950">
         <div>
           <Header />
         </div>
@@ -15,7 +15,7 @@ function App() {
           <Body />
         </div>
         <Footer />
-      </body>
+      </div>
     </Router>
   );
 }

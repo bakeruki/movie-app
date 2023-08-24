@@ -11,16 +11,19 @@ function TrendingMovieSlider(props) {
     speed: 500,
     slidesToShow: props.settings.slidesToShow,
     slidesToScroll: props.settings.slidesToScroll,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
-    dots: false,
+    dots: true,
   };
 
   return (
     <div>
       <Slider {...sliderSettings}>
         {props.movies.map((movie, index) => (
-          <Link to={movie.title ? `/movies/${movie.id}` : `/tv/${movie.id}`}>
+          <Link
+            to={movie.title ? `/movies/${movie.id}` : `/tv/${movie.id}`}
+            key={index}
+          >
             <MovieDetail
               movie={movie}
               isMovie={movie.title ? true : false}

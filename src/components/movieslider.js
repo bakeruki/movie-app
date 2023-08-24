@@ -40,7 +40,10 @@ const MovieSlider = (props) => {
     <div>
       <Slider {...sliderSettings}>
         {props.movies.map((movie, index) => (
-          <Link to={movie.title ? `/movies/${movie.id}` : `/tv/${movie.id}`}>
+          <Link
+            to={movie.title ? `/movies/${movie.id}` : `/tv/${movie.id}`}
+            key={index}
+          >
             <div>
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}

@@ -13,8 +13,6 @@ function Search() {
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    console.log(responseJson);
-
     if (responseJson.results) {
       setSearchResults(responseJson.results);
     }

@@ -36,13 +36,13 @@ function MovieDetail(props) {
           Genres:
           {props.movie.genres
             ? props.movie.genres?.map((genre, index) => (
-                <p className="text-slate-300 text-md">
+                <p className="text-slate-300 text-md" key={index}>
                   {genre.name}
                   {index === props.movie.genres.length - 1 ? "" : ","}
                 </p>
               ))
             : movieDetails.genres?.map((genre, index) => (
-                <p className="text-slate-300 text-md">
+                <p className="text-slate-300 text-md" key={index}>
                   {genre.name}
                   {index === movieDetails.genres.length - 1 ? "" : ","}
                 </p>
