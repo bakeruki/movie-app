@@ -2,6 +2,7 @@
 
 #secrets
 .env
+_redirects
 
 # dependencies
 /node_modules
