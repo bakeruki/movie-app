@@ -11,7 +11,7 @@ function TrendingMovieSlider(props) {
     speed: 500,
     slidesToShow: props.settings.slidesToShow,
     slidesToScroll: props.settings.slidesToScroll,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4000,
     dots: true,
   };

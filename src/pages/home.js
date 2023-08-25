@@ -46,8 +46,8 @@ function Home() {
   };
 
   return (
-    <div className="flex justify-center items-center my-3">
-      <div className="max-w-2xl">
+    <div className="flex justify-center items-center m-3">
+      <div className="w-9/12">
         <div className="mb-2">
           <h1 className="text-slate-100 mb-2 font-regular text-xl">
             Now Playing In Theaters

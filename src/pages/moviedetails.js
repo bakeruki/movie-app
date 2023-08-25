@@ -60,17 +60,22 @@ function MovieDetails(props) {
 
   if (movieExists) {
     return (
-      <div className="mt-3 mx-32">
-        <div className="w-full h-fit bg-gradient-to-r from-slate-900 to-slate-600 rounded-md">
-          <MovieDetail movie={movie} isMovie={props.isMovie}></MovieDetail>
-        </div>
-        <div className="flex justify-center my-3">
-          <div className="max-w-2xl">
-            <div className="mb-2">
-              <h1 className="text-slate-100 mb-2 font-regular text-xl">
-                {props.isMovie ? `Similar Movies` : `Similar TV`}
-              </h1>
-              <MovieSlider movies={recommendations} settings={sliderSettings} />
+      <div className="flex justify-center items-center m-3">
+        <div className="w-9/12">
+          <div className="w-full h-fit bg-gradient-to-r from-slate-900 to-slate-600 rounded-md">
+            <MovieDetail movie={movie} isMovie={props.isMovie}></MovieDetail>
+          </div>
+          <div className="flex justify-center my-3">
+            <div className="w-9/12">
+              <div className="mb-2">
+                <h1 className="text-slate-100 mb-2 font-regular text-xl">
+                  {props.isMovie ? `Similar Movies` : `Similar TV`}
+                </h1>
+                <MovieSlider
+                  movies={recommendations}
+                  settings={sliderSettings}
+                />
+              </div>
             </div>
           </div>
         </div>

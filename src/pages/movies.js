@@ -69,38 +69,40 @@ function Movies(props) {
   };
 
   return (
-    <div className="mx-32">
-      <div className="text-slate-100 my-2 font-regular text-xl">
-        {props.mediaType === "movie" ? "Trending Movies" : "Trending TV"}
-      </div>
-      <div className="w-full h-fit bg-gradient-to-r from-slate-900 to-slate-600 rounded-md">
-        <div>
-          <TrendingMovieSlider
-            movies={trending}
-            settings={trendingSliderSettings}
-          ></TrendingMovieSlider>
+    <div className="flex justify-center items-center">
+      <div className="w-9/12">
+        <div className="text-slate-100 my-2 font-regular text-xl">
+          {props.mediaType === "movie" ? "Trending Movies" : "Trending TV"}
         </div>
-      </div>
-      <div>
-        {genresFetched
-          ? genreLists.map((list, index) => (
-              <div
-                className="flex justify-center items-center my-3"
-                key={index}
-              >
-                <div className="max-w-2xl">
-                  <h1 className="text-slate-100 my-2 font-regular text-md">
-                    Popular {genres[index].name}{" "}
-                    {props.mediaType === "movie" ? "Movies" : "TV"}
-                  </h1>
-                  <MovieSlider
-                    movies={list.results}
-                    settings={genreSliderSettings}
-                  ></MovieSlider>
+        <div className="w-full bg-gradient-to-r from-slate-900 to-slate-600 rounded-md">
+          <div>
+            <TrendingMovieSlider
+              movies={trending}
+              settings={trendingSliderSettings}
+            ></TrendingMovieSlider>
+          </div>
+        </div>
+        <div>
+          {genresFetched
+            ? genreLists.map((list, index) => (
+                <div
+                  className="flex justify-center items-center my-3"
+                  key={index}
+                >
+                  <div className="w-9/12">
+                    <h1 className="text-slate-100 my-2 font-regular text-md">
+                      Popular {genres[index].name}{" "}
+                      {props.mediaType === "movie" ? "Movies" : "TV"}
+                    </h1>
+                    <MovieSlider
+                      movies={list.results}
+                      settings={genreSliderSettings}
+                    ></MovieSlider>
+                  </div>
                 </div>
-              </div>
-            ))
-          : null}
+              ))
+            : null}
+        </div>
       </div>
     </div>
   );

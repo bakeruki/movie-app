@@ -19,8 +19,8 @@ function MovieDetail(props) {
   }, [props.isMovie]);
 
   return (
-    <div className="grid grid-cols-2 grid-flow-row">
-      <div className="m-5 place-self-center">
+    <div className="grid gap-8 lg:grid-cols-2">
+      <div className="mx-5 mt-5 lg:mx-0 lg:my-5 place-self-center">
         <img
           src={`https://image.tmdb.org/t/p/original/${props.movie.backdrop_path}`}
           className="object-cover rounded-md mix-blend-normal object-center"
@@ -28,11 +28,11 @@ function MovieDetail(props) {
         ></img>
       </div>
 
-      <div className="">
-        <div className="text-slate-100 text-xl mt-5">
+      <div className="mx-5 lg:mx-0 mb-5">
+        <div className="text-slate-100 text-xl lg:mt-5">
           {props.movie.title ? props.movie.title : props.movie.name}
         </div>
-        <div className="flex gap-1 text-slate-300 text-md pt-2 mr-20">
+        <div className="flex gap-1 text-slate-300 text-md pt-2">
           Genres:
           {props.movie.genres
             ? props.movie.genres?.map((genre, index) => (
@@ -48,10 +48,8 @@ function MovieDetail(props) {
                 </p>
               ))}
         </div>
-        <div className="text-slate-300 text-md mr-20">
-          {props.movie.overview}
-        </div>
-        <div className="text-slate-400 text-md mr-20">
+        <div className="text-slate-300 text-md">{props.movie.overview}</div>
+        <div className="text-slate-400 text-md">
           {props.isMovie
             ? `Released: ${
                 props.movie.release_date
@@ -64,7 +62,7 @@ function MovieDetail(props) {
                   : movieDetails.number_of_seasons
               }`}
         </div>
-        <div className="text-slate-400 text-md mr-20">
+        <div className="text-slate-400 text-md">
           {props.isMovie
             ? `Runtime: ${
                 props.movie.runtime ? props.movie.runtime : movieDetails.runtime

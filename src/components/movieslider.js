@@ -47,7 +47,7 @@ const MovieSlider = (props) => {
             <div>
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                className="object-scale-down h-48 rounded-md"
+                className="object-scale-down h-auto rounded-md p-1"
                 alt="moviePoster"
               ></img>
               <h1 className="text-slate-100 pr-2 text-sm pt-2">
