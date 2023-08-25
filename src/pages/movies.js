@@ -47,6 +47,7 @@ function Movies(props) {
   };
 
   useEffect(() => {
+    setGenresFetched(false);
     getTrendingMovies();
     getGenres();
   }, [props.mediaType]);
